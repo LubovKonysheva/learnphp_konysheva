@@ -57,20 +57,16 @@ elseif ($age < 1)
 
   switch ($day) {
     case 1:
-        echo "<br> Это рабочий день";
-        break;
-    case $day <= 5:
-        echo "<br> Это рабочий день";
-        break;
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+      echo "<br> Это рабочий день";
+      break;
     case 6:
-        echo "<br> Это выходной";
-        break;
     case 7:
-        echo "<br> Это выходной";
-        break;
-    case $day > 7:
-        echo "<br> Неизвестное число";
-        break;
+      echo "<br> Это выходной";
+      break;
     default:
     echo "<br> Неизвестное число";
     break;
@@ -80,16 +76,16 @@ elseif ($age < 1)
 <?php
   //Задание 5.
 
-  $keys = array('model', 'speed', 'doors', 'year');
-  $item = array('X5', '120', '5', '2015');
+  $keys = ['model', 'speed', 'doors', 'year'];
+  $item = ['X5', '120', '5', '2015'];
   $bmw = array_combine($keys, $item);
 
-  $keys1 = array('model', 'speed', 'doors', 'year');
-  $item1 = array('camry', '120', '4', '2000');
+  $keys1 = ['model', 'speed', 'doors', 'year'];
+  $item1 = ['camry', '120', '4', '2000'];
   $toyota = array_combine($keys1, $item1);
 
-  $keys2 = array('model', 'speed', 'doors', 'year');
-  $item2 = array('insignia', '200', '5', '2012');
+  $keys2 = ['model', 'speed', 'doors', 'year'];
+  $item2 = ['insignia', '200', '5', '2012'];
   $opel = array_combine($keys2, $item2);
 
 echo '<pre>';
@@ -103,12 +99,7 @@ echo '</pre>';
 <?php
   //Задание 5/2.
 
-  $car = array
-  (
-      'bmw' => $bmw,
-      'toyota' => $toyota,
-      'opel' => $opel,
-  );
+  $car = ['bmw' => $bmw, 'toyota' => $toyota, 'opel' => $opel,];
 
   foreach ($car as $key => $item) {
     echo '<br>CAR ' . $key . '<br>' . $car[$key]['model'] . ' ' . $car[$key]['speed'] . ' ' . $car[$key]['doors'] . ' ' . $car[$key]['year'] . '<br>';
